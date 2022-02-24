@@ -1,0 +1,244 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2022-02-24T04:13:10.199Z",
+        "before": [
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "passos.PassosPesquisa.before(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "Pesquisa realizada com assunto",
+        "description": "",
+        "id": "realizar-pesquisas-no-blog-do-agi;pesquisa-realizada-com-assunto;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4306000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "o usuário acessou a página inicial da loja",
+            "match": {
+              "location": "passos.PassosGeral.o_usuário_acessou_a_página_inicial_da_loja()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: O elemento By.id: button[id\u003d\u0027search-open-sticky\u0027] não está visível na página\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat core.Core.aguardarElementoPresente(Core.java:45)\r\n\tat core.Core.clicar(Core.java:59)\r\n\tat passos.PassosPesquisa.clicar_na_lupa_no_canto_superior_esquerdo_da_página(PassosPesquisa.java:31)\r\n\tat ✽.clicar na lupa no canto superior esquerdo da página(file:///C:/desafio_automacao_agi/src/main/java/casosDeTestes/PesquisarComAssunto.feature:7)\r\n",
+              "duration": 33480000000,
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "clicar na lupa no canto superior esquerdo da página",
+            "match": {
+              "location": "passos.PassosPesquisa.clicar_na_lupa_no_canto_superior_esquerdo_da_página()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "clicar no campo Pesquisar buscando pelo \"Qualidade\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Qualidade",
+                  "offset": 41
+                }
+              ],
+              "location": "passos.PassosPesquisa.clicar_no_campo_Pesquisar_buscando_pelo(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "clicar no botão \"Pesquisar\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Pesquisar",
+                  "offset": 17
+                }
+              ],
+              "location": "passos.PassosPesquisa.clicar_no_botao(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "deve exibir a \"Resultados da busca por: Qualidade\" na pagina",
+            "match": {
+              "location": "passos.PassosPesquisa.deve_exibir_a_na_pagina(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@AGI"
+          },
+          {
+            "name": "@ExecutarAuto"
+          },
+          {
+            "name": "@silvana.pires"
+          }
+        ]
+      }
+    ],
+    "name": "Realizar pesquisas no Blog do AGI",
+    "description": "",
+    "id": "realizar-pesquisas-no-blog-do-agi",
+    "keyword": "Feature",
+    "uri": "file:src/main/java/casosDeTestes/PesquisarComAssunto.feature",
+    "tags": [
+      {
+        "name": "@AGI",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@ExecutarAuto",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 6
+        }
+      },
+      {
+        "name": "@silvana.pires",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 20
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2022-02-24T04:13:48.223Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "passos.PassosPesquisa.before(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Pesquisa realizada sem assunto",
+        "description": "",
+        "id": "realizar-pesquisas-no-blog-do-agi;pesquisa-realizada-sem-assunto;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3217000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "o usuário acessou a página inicial da loja",
+            "match": {
+              "location": "passos.PassosGeral.o_usuário_acessou_a_página_inicial_da_loja()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 7,
+            "name": "clicar no botao \"Pesquisar\"",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "deve exibir a \"Nenhum resultado encontrado\" na pagina",
+            "match": {
+              "location": "passos.PassosPesquisa.deve_exibir_a_na_pagina(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@AGI"
+          },
+          {
+            "name": "@ExecutarAuto"
+          },
+          {
+            "name": "@silvana.pires"
+          }
+        ]
+      }
+    ],
+    "name": "Realizar pesquisas no Blog do AGI",
+    "description": "",
+    "id": "realizar-pesquisas-no-blog-do-agi",
+    "keyword": "Feature",
+    "uri": "file:src/main/java/casosDeTestes/PesquisarSemAssunto.feature",
+    "tags": [
+      {
+        "name": "@AGI",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@ExecutarAuto",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 6
+        }
+      },
+      {
+        "name": "@silvana.pires",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 20
+        }
+      }
+    ]
+  }
+]

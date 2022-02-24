@@ -13,4 +13,8 @@ public class PaginaGeral extends Core {
         return getByClassName("alert-danger");
     }
 
+   public By getResultadoPagina(){
+        return getByCss(".archive-title");
+    }
+
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 public class PaginaPesquisa extends Core {
 
     public By getLupa(){
-        return getById("#search-open-sticky");
+        return getById("button[id='search-open-sticky']");
     }
 
     public By getBotaoPesquisar(){

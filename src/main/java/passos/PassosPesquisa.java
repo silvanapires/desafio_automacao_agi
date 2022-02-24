@@ -1,27 +1,41 @@
 package passos;
 
 import core.Core;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import paginas.PaginaGeral;
 import paginas.PaginaPesquisa;
+
 
 public class PassosPesquisa extends Core {
 
     private PaginaPesquisa paginaPesquisa = null;
     private PaginaGeral paginaGeral = null;
 
-    public PassosPesquisa() {
-
-        paginaPesquisa = new PaginaPesquisa();
-        PageFactory.initElements(driver, this.paginaPesquisa);
-
+    @Before()
+    public void before(Scenario cenario) {
+        setCenario(cenario);
     }
 
-    @When("clicar no botão Pesquisar$")
-    public void clicar_no_botao_Pesquisar() {
-        clicar(paginaPesquisa.getBotaoPesquisar());
+    public PassosPesquisa() {
+        paginaPesquisa = new PaginaPesquisa();
+        PageFactory.initElements(driver, this.paginaPesquisa);
+    }
+
+    @And("clicar na lupa no canto superior esquerdo da página")
+    public void clicar_na_lupa_no_canto_superior_esquerdo_da_página(){
+        aguardarThreadSleep(3);
+        clicar(paginaPesquisa.getLupa());
+    }
+
+    @When("clicar no botão \"([^\"]*)\"$")
+    public void clicar_no_botao(String botao){
+        clicarBotao(botao);
     }
 
     @Then("deve exibir \"([^\"]*)\" na pagina$")
@@ -29,4 +43,14 @@ public class PassosPesquisa extends Core {
         verificarTexto(paginaGeral.getMensagemValidacao(), mensagem);
     }
 
+    @And("clicar no campo Pesquisar buscando pelo \"([^\"]*)\"$")
+    public void clicar_no_campo_Pesquisar_buscando_pelo(String assunto) {
+        clicar(paginaPesquisa.getCampoPesquisar());
+        digitar(paginaPesquisa.getCampoPesquisar(), assunto);
+    }
+
+    @Then("deve exibir a \"([^\"]*)\" na pagina")
+    public void deve_exibir_a_na_pagina(String mensagem){
+        verificarTexto(paginaGeral.getMensagemValidacao(), mensagem);
+    }
 }

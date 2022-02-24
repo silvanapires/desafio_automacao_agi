@@ -64,13 +64,13 @@ public class DriverFactory {
         return driver;
     }
 
-    public static void iniciarDriver() {
+    public static void abrirDriver() {
         driver = null;
         try {
             driver = getDriver(getProperties());
             wait = new WebDriverWait(driver, 30);
         } catch (Exception e) {
-            System.out.println("Não foi possível iniciar o driver " + e.getMessage());
+            System.out.println("Não foi possível abrir o driver " + e.getMessage());
         }
     }
 
