@@ -6,14 +6,14 @@ import org.openqa.selenium.By;
 public class PaginaPesquisa extends Core {
 
     public By getLupa(){
-        return getById("button[id='search-open-sticky']");
+        return getById("search-open");
     }
 
-    public By getBotaoPesquisar(){
-        return getByCss(".search-submit > input");
+    public By getPesquisar(){
+        return getByCss(".search-submit");
     }
 
     public By getCampoPesquisar(){
-        return getByCss(".search-field > input");
+        return getByCss(".search-field");
     }
 }

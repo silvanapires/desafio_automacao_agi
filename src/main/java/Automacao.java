@@ -11,10 +11,9 @@ import org.junit.runner.RunWith;
         "json:target/cucumber-html-report.json"}, features = "src/", monochrome = true,
         tags = "@ExecutarAuto", publish = true)
 
-public class Automacao extends DriverFactory{
+public class Automacao extends DriverFactory {
 
     public Automacao() {
-
     }
 
     @BeforeClass

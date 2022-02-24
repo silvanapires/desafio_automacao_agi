@@ -3,11 +3,11 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2022-02-24T04:13:10.199Z",
+        "start_timestamp": "2022-02-24T15:42:38.627Z",
         "before": [
           {
             "result": {
-              "duration": 7000000,
+              "duration": 6000000,
               "status": "passed"
             },
             "match": {
@@ -24,7 +24,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4306000000,
+              "duration": 3848000000,
               "status": "passed"
             },
             "line": 6,
@@ -36,9 +36,8 @@
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: O elemento By.id: button[id\u003d\u0027search-open-sticky\u0027] não está visível na página\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat core.Core.aguardarElementoPresente(Core.java:45)\r\n\tat core.Core.clicar(Core.java:59)\r\n\tat passos.PassosPesquisa.clicar_na_lupa_no_canto_superior_esquerdo_da_página(PassosPesquisa.java:31)\r\n\tat ✽.clicar na lupa no canto superior esquerdo da página(file:///C:/desafio_automacao_agi/src/main/java/casosDeTestes/PesquisarComAssunto.feature:7)\r\n",
-              "duration": 33480000000,
-              "status": "failed"
+              "duration": 4332000000,
+              "status": "passed"
             },
             "line": 7,
             "name": "clicar na lupa no canto superior esquerdo da página",
@@ -49,8 +48,8 @@
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 2300000000,
+              "status": "passed"
             },
             "line": 8,
             "name": "clicar no campo Pesquisar buscando pelo \"Qualidade\"",
@@ -67,29 +66,32 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3215000000,
+              "status": "passed"
             },
             "line": 9,
-            "name": "clicar no botão \"Pesquisar\"",
+            "name": "clicar em Pesquisar",
             "match": {
-              "arguments": [
-                {
-                  "val": "Pesquisar",
-                  "offset": 17
-                }
-              ],
-              "location": "passos.PassosPesquisa.clicar_no_botao(java.lang.String)"
+              "location": "passos.PassosPesquisa.clicar_em_Pesquisar()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "skipped"
+              "error_message": "java.lang.NullPointerException\r\n\tat passos.PassosPesquisa.deve_exibir_o_resultado_na_pagina(PassosPesquisa.java:43)\r\n\tat ✽.deve exibir o \"Resultados da busca por: Qualidade\" na pagina(file:///C:/desafio_automacao_agi/src/main/java/casosDeTestes/PesquisarComAssunto.feature:10)\r\n",
+              "duration": 3000000,
+              "status": "failed"
             },
             "line": 10,
-            "name": "deve exibir a \"Resultados da busca por: Qualidade\" na pagina",
+            "name": "deve exibir o \"Resultados da busca por: Qualidade\" na pagina",
             "match": {
-              "location": "passos.PassosPesquisa.deve_exibir_a_na_pagina(java.lang.String)"
+              "arguments": [
+                {
+                  "val": "Resultados da busca por: Qualidade",
+                  "offset": 15
+                }
+              ],
+              "location": "passos.PassosPesquisa.deve_exibir_o_resultado_na_pagina(java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -143,11 +145,11 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2022-02-24T04:13:48.223Z",
+        "start_timestamp": "2022-02-24T15:42:52.600Z",
         "before": [
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -164,7 +166,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3217000000,
+              "duration": 1920000000,
               "status": "passed"
             },
             "line": 6,
@@ -190,9 +192,7 @@
             },
             "line": 8,
             "name": "deve exibir a \"Nenhum resultado encontrado\" na pagina",
-            "match": {
-              "location": "passos.PassosPesquisa.deve_exibir_a_na_pagina(java.lang.String)"
-            },
+            "match": {},
             "keyword": "Then "
           }
         ],

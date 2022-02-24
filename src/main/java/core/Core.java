@@ -4,7 +4,6 @@ import io.cucumber.java.Scenario;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -19,10 +18,6 @@ public class Core extends DriverFactory {
 
     public By getById(String id) {
         return By.id(id);
-    }
-
-    public By getByClassName(String className) {
-        return By.className(className);
     }
 
     public By getByCss(String css) {
@@ -65,29 +60,16 @@ public class Core extends DriverFactory {
         DriverFactory.driver.findElement(By.xpath("//button[contains(.,'" + botao + "')]")).click();
     }
 
-    public void selecionarTexto(By by, String texto) {
-        WebElement selecionar = DriverFactory.driver.findElement(by);
-        Select select = new Select(selecionar);
-        select.selectByVisibleText(texto);
-    }
-
-    public void selecionarValue(By by, String texto) {
-        WebElement selecionar = DriverFactory.driver.findElement(by);
-        Select select = new Select(selecionar);
-        select.selectByValue(texto);
-    }
-
     public void verificarTexto(By by, String texto) {
         aguardarElementoPresente(by);
         Assert.assertEquals(texto, getElemento(by).getText().replace("\n", "").replace("\"", ""));
     }
 
     public void digitar(By by, String texto) {
-//        if (!texto.isEmpty()) {
-//            aguardarElementoPresente(by);
-//            getElemento(by).sendKeys(texto);
-//        }
+        aguardarElementoPresente(by);
+        getElemento(by).sendKeys(texto);
     }
+
     public void setCenario(Scenario cenario) {
         this.cenario = cenario;
     }

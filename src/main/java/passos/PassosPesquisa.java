@@ -6,7 +6,6 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import paginas.PaginaGeral;
 import paginas.PaginaPesquisa;
@@ -28,29 +27,24 @@ public class PassosPesquisa extends Core {
     }
 
     @And("clicar na lupa no canto superior esquerdo da página")
-    public void clicar_na_lupa_no_canto_superior_esquerdo_da_página(){
+    public void clicar_na_lupa_no_canto_superior_esquerdo_da_página() {
         aguardarThreadSleep(3);
         clicar(paginaPesquisa.getLupa());
     }
 
-    @When("clicar no botão \"([^\"]*)\"$")
-    public void clicar_no_botao(String botao){
-        clicarBotao(botao);
+    @When("clicar em Pesquisar")
+    public void clicar_em_Pesquisar() {
+        clicar(paginaPesquisa.getPesquisar());
     }
 
-    @Then("deve exibir \"([^\"]*)\" na pagina$")
-    public void deve_exibir_a_mensagem_na_pagina(String mensagem) {
-        verificarTexto(paginaGeral.getMensagemValidacao(), mensagem);
+    @Then("deve exibir o \"([^\"]*)\" na pagina$")
+    public void deve_exibir_o_resultado_na_pagina(String mensagem) {
+        verificarTexto(paginaGeral.getResultadoPagina(), mensagem);
     }
 
     @And("clicar no campo Pesquisar buscando pelo \"([^\"]*)\"$")
     public void clicar_no_campo_Pesquisar_buscando_pelo(String assunto) {
-        clicar(paginaPesquisa.getCampoPesquisar());
+        aguardarThreadSleep(2);
         digitar(paginaPesquisa.getCampoPesquisar(), assunto);
-    }
-
-    @Then("deve exibir a \"([^\"]*)\" na pagina")
-    public void deve_exibir_a_na_pagina(String mensagem){
-        verificarTexto(paginaGeral.getMensagemValidacao(), mensagem);
     }
 }
