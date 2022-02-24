@@ -37,14 +37,24 @@ public class PassosPesquisa extends Core {
         clicar(paginaPesquisa.getPesquisar());
     }
 
-    @Then("deve exibir o \"([^\"]*)\" na pagina$")
-    public void deve_exibir_o_resultado_na_pagina(String mensagem) {
-        verificarTexto(paginaGeral.getResultadoPagina(), mensagem);
+    @And("clicar no retorno da pesquisa")
+    public void clicar_no_retorno_da_pesquisa(){
+        clicar(paginaPesquisa.getTitulo());
     }
 
     @And("clicar no campo Pesquisar buscando pelo \"([^\"]*)\"$")
     public void clicar_no_campo_Pesquisar_buscando_pelo(String assunto) {
         aguardarThreadSleep(2);
         digitar(paginaPesquisa.getCampoPesquisar(), assunto);
+    }
+
+    @Then("deve exibir o \"([^\"]*)\" da pesquisa na página$")
+    public void deve_exibir_o_da_pesquisa_na_pagina(String assunto) {
+        verificarTexto(paginaPesquisa.getTitulo(), assunto);
+    }
+
+    @Then("^deve exibir todas as matérias do blog na página \"([^\"]*)\"$")
+    public void deve_exibir_varios_materias_no_blog_da_pagina(String assunto){
+        verificarTexto(paginaPesquisa.getRetornoPesquisa(), assunto);
     }
 }

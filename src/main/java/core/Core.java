@@ -5,11 +5,14 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.List;
 
 public class Core extends DriverFactory {
 
     public Scenario cenario = null;
+
+    public void setCenario(Scenario cenario) {
+        this.cenario = cenario;
+    }
 
     public void acessarPagina(String url) {
         DriverFactory.driver.get(url);
@@ -22,6 +25,22 @@ public class Core extends DriverFactory {
 
     public By getByCss(String css) {
         return By.cssSelector(css);
+    }
+
+    public void clicar(By by) {
+        aguardarElementoPresente(by);
+        getElemento(by).click();
+        aguardarThreadSleep(1);
+    }
+
+    public void digitar(By by, String texto) {
+        aguardarElementoPresente(by);
+        getElemento(by).sendKeys(texto);
+    }
+
+    public WebElement getElemento(By by) {
+        aguardarElementoPresente(by);
+        return DriverFactory.driver.findElement(by);
     }
 
     public void aguardarThreadSleep(long segundos) {
@@ -41,37 +60,8 @@ public class Core extends DriverFactory {
         }
     }
 
-    public WebElement getElemento(By by) {
-        aguardarElementoPresente(by);
-        return DriverFactory.driver.findElement(by);
-    }
-
-    public List<WebElement> getElementos(By by) {
-        return DriverFactory.driver.findElements(by);
-    }
-
-    public void clicar(By by) {
-        aguardarElementoPresente(by);
-        getElemento(by).click();
-        aguardarThreadSleep(1);
-    }
-
-    public void clicarBotao(String botao) {
-        DriverFactory.driver.findElement(By.xpath("//button[contains(.,'" + botao + "')]")).click();
-    }
-
     public void verificarTexto(By by, String texto) {
         aguardarElementoPresente(by);
         Assert.assertEquals(texto, getElemento(by).getText().replace("\n", "").replace("\"", ""));
     }
-
-    public void digitar(By by, String texto) {
-        aguardarElementoPresente(by);
-        getElemento(by).sendKeys(texto);
-    }
-
-    public void setCenario(Scenario cenario) {
-        this.cenario = cenario;
-    }
-
 }

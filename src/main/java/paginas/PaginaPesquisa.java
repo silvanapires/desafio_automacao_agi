@@ -16,4 +16,12 @@ public class PaginaPesquisa extends Core {
     public By getCampoPesquisar(){
         return getByCss(".search-field");
     }
+
+    public By getTitulo(){
+        return getByCss(".entry-title");
+    }
+
+    public By getRetornoPesquisa(){
+        return getByCss("h2[class='entry-title']");
+    }
 }

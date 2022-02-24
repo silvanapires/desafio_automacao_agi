@@ -6,9 +6,9 @@ Feature: Realizar pesquisas no Blog do AGI
     Given o usuário acessou a página inicial da loja
     And clicar na lupa no canto superior esquerdo da página
     When clicar em Pesquisar
-    Then deve exibir o "<resultado>" na pagina
+    Then deve exibir todas as matérias do blog na página "<primeiroAssunto>"
 
 
     Examples:
-      | resultado                   |
-      | Nenhum resultado encontrado |
+      | primeiroAssunto                           |
+      | Agi se estrutura para continuar avançando |

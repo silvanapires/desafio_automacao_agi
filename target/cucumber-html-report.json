@@ -3,11 +3,11 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2022-02-24T15:42:38.627Z",
+        "start_timestamp": "2022-02-24T21:00:15.352Z",
         "before": [
           {
             "result": {
-              "duration": 6000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "match": {
@@ -24,7 +24,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3848000000,
+              "duration": 4315000000,
               "status": "passed"
             },
             "line": 6,
@@ -36,7 +36,7 @@
           },
           {
             "result": {
-              "duration": 4332000000,
+              "duration": 4392000000,
               "status": "passed"
             },
             "line": 7,
@@ -48,15 +48,15 @@
           },
           {
             "result": {
-              "duration": 2300000000,
+              "duration": 2366000000,
               "status": "passed"
             },
             "line": 8,
-            "name": "clicar no campo Pesquisar buscando pelo \"Qualidade\"",
+            "name": "clicar no campo Pesquisar buscando pelo \"Conta remunerada paga Imposto de Renda?\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Qualidade",
+                  "val": "Conta remunerada paga Imposto de Renda?",
                   "offset": 41
                 }
               ],
@@ -66,7 +66,7 @@
           },
           {
             "result": {
-              "duration": 3215000000,
+              "duration": 3354000000,
               "status": "passed"
             },
             "line": 9,
@@ -78,20 +78,19 @@
           },
           {
             "result": {
-              "error_message": "java.lang.NullPointerException\r\n\tat passos.PassosPesquisa.deve_exibir_o_resultado_na_pagina(PassosPesquisa.java:43)\r\n\tat ✽.deve exibir o \"Resultados da busca por: Qualidade\" na pagina(file:///C:/desafio_automacao_agi/src/main/java/casosDeTestes/PesquisarComAssunto.feature:10)\r\n",
-              "duration": 3000000,
-              "status": "failed"
+              "duration": 193000000,
+              "status": "passed"
             },
             "line": 10,
-            "name": "deve exibir o \"Resultados da busca por: Qualidade\" na pagina",
+            "name": "deve exibir o \"Conta remunerada paga Imposto de Renda?\" da pesquisa na página",
             "match": {
               "arguments": [
                 {
-                  "val": "Resultados da busca por: Qualidade",
+                  "val": "Conta remunerada paga Imposto de Renda?",
                   "offset": 15
                 }
               ],
-              "location": "passos.PassosPesquisa.deve_exibir_o_resultado_na_pagina(java.lang.String)"
+              "location": "passos.PassosPesquisa.deve_exibir_o_da_pesquisa_na_pagina(java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -145,11 +144,11 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2022-02-24T15:42:52.600Z",
+        "start_timestamp": "2022-02-24T21:00:30.797Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -157,7 +156,7 @@
             }
           }
         ],
-        "line": 13,
+        "line": 14,
         "name": "Pesquisa realizada sem assunto",
         "description": "",
         "id": "realizar-pesquisas-no-blog-do-agi;pesquisa-realizada-sem-assunto;;2",
@@ -166,7 +165,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1920000000,
+              "duration": 2572000000,
               "status": "passed"
             },
             "line": 6,
@@ -178,21 +177,44 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 4249000000,
+              "status": "passed"
             },
             "line": 7,
-            "name": "clicar no botao \"Pesquisar\"",
-            "match": {},
+            "name": "clicar na lupa no canto superior esquerdo da página",
+            "match": {
+              "location": "passos.PassosPesquisa.clicar_na_lupa_no_canto_superior_esquerdo_da_página()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2962000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "clicar em Pesquisar",
+            "match": {
+              "location": "passos.PassosPesquisa.clicar_em_Pesquisar()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 181000000,
+              "status": "passed"
             },
-            "line": 8,
-            "name": "deve exibir a \"Nenhum resultado encontrado\" na pagina",
-            "match": {},
+            "line": 9,
+            "name": "deve exibir todas as matérias do blog na página \"Agi se estrutura para continuar avançando\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Agi se estrutura para continuar avançando",
+                  "offset": 49
+                }
+              ],
+              "location": "passos.PassosPesquisa.deve_exibir_varios_materias_no_blog_da_pagina(java.lang.String)"
+            },
             "keyword": "Then "
           }
         ],
